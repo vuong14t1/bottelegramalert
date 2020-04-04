@@ -2,13 +2,6 @@ var schedule = require("node-schedule");
 var listIdGroup = [];
 var index = require("./../index.js");
 
-//test
-var cronExpress = ' /1 * * * * *';
-var j = schedule.scheduleJob(cronExpress, function(fireDate){
-  broadcaseMessage("1p notify 1 lan");
-  console.log("1p notify 1 lan");
-});
-
 //schedule 1
 var rule = new schedule.RecurrenceRule();
 rule.dayOfWeek = [new schedule.Range(1, 5)];
