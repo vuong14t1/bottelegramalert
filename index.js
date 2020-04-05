@@ -28,6 +28,9 @@ bot.on("text", (message) => {
     case "/schedule_job":
       schedule_job.registerAlert(message.chat.id);
     break;
+    case "/unschedule_job":
+      schedule_job.unRegisterAlert(message.chat.id);
+    break;
   }
   
 });

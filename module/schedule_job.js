@@ -92,4 +92,13 @@ function registerAlert(idGroup) {
     }
 }
 
+function unRegisterAlert() {
+    var idx = listIdGroup.indexOf(idGroup);
+    if(idx > -1) {
+        listIdGroup.splice(idx, 1);
+        index.bot.sendMessage(idGroup, "Destroy register alert success!");
+    }
+}
+
 exports.registerAlert = registerAlert;
+exports.unRegisterAlert = unRegisterAlert;
