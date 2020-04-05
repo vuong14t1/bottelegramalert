@@ -1,1 +1,1 @@
-web: node index.js 1337
+web: node index.js
