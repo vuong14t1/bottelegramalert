@@ -5,7 +5,6 @@ const TelegramBot = require('node-telegram-bot-api');
 const token = process.env.TOKEN;
 var corona = require("./module/analytics_corona.js");
 var utility = require("./module/utility.js");
-var mongo_controller = require("./module/mongodb_connection.js");
 var schedule_job = require("./module/schedule_job.js");
 // Created instance of TelegramBot
 const bot = new TelegramBot(token, {

@@ -2,6 +2,11 @@ var schedule = require("node-schedule");
 var listIdGroup = [];
 var index = require("./../index.js");
 
+//test
+var j = schedule.scheduleJob('*/1 * * * *', function(fireDate){
+    broadcaseMessage("For testing schedule!");
+  });
+
 //schedule 1
 var rule = new schedule.RecurrenceRule();
 rule.dayOfWeek = [new schedule.Range(1, 5)];
