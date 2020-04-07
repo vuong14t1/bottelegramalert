@@ -1,4 +1,4 @@
-var schedule = require("node-schedule");
+var schedule = require("node-schedule-tz");
 var listIdGroup = [];
 var index = require("./../index.js");
 
