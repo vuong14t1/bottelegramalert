@@ -7,7 +7,7 @@ var rule = new schedule.RecurrenceRule();
 rule.dayOfWeek = [new schedule.Range(1, 5)];
 rule.tz = "Asia/Ho_Chi_Minh";
 rule.hour = 19;
-rule.minute = 15;
+rule.minute = 17;
 schedule.scheduleJob(rule, function(){
     broadcaseMessage("Testing for set timezone ");
 });
