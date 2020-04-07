@@ -4,12 +4,10 @@ var index = require("./../index.js");
 
 //schedule testing
 var rule = new schedule.RecurrenceRule();
-rule.dayOfWeek = [new schedule.Range(1, 5)];
 rule.tz = "Asia/Ho_Chi_Minh";
-rule.hour = 19;
-rule.minute = 31;
+rule.hour = 20;
 schedule.scheduleJob(rule, function(){
-    broadcaseMessage("Testing for set timezone ");
+    broadcaseMessage("20h rồi!Học hay chơi đây!");
 });
 
 
