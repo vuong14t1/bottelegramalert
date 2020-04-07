@@ -3,10 +3,15 @@ require('dotenv').config();
 const fetch = require('node-fetch');  
 
 const TelegramBot = require('node-telegram-bot-api');
-const token = process.env.TOKEN;
+//mode 1: live
+var token = process.env.TOKEN_LIVE;
+if(process.env.MODE_BUILD != 1) {
+  token = process.env.TOKEN_DEV;
+}
 var corona = require("./module/analytics_corona.js");
 var utility = require("./module/utility.js");
 var schedule_job = require("./module/schedule_job.js");
+var broadcast_utility = require("./module/broadcast_utility.js");
 var http = require('http');
 http.createServer(function (req, res) {
    res.writeHead(200, {'Content-Type': 'text/plain'});
@@ -23,13 +28,16 @@ bot.on("text", (message) => {
       corona.analyticsCoronaVN(bot, message);
     break;
     case "/hi":
-      bot.sendMessage(message.chat.id, "Hello Ông chủ đẹp trai!");
+      broadcast_utility.sendMsg(bot, message.chat.id, "Hi boss.");
     break;
     case "/schedule_job":
       schedule_job.registerAlert(message.chat.id);
     break;
     case "/unschedule_job":
       schedule_job.unRegisterAlert(message.chat.id);
+    break;
+    case "/help":
+      broadcast_utility.sendMsgWithMarkup(bot, message.chat.id, "Hi boss.", [["/corona"], ["/schedule_job"], ["/unschedule_job"]]);
     break;
   }
   
