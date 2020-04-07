@@ -6,6 +6,8 @@ var index = require("./../index.js");
 var rule = new schedule.RecurrenceRule();
 rule.tz = "Asia/Ho_Chi_Minh";
 rule.hour = 20;
+rule.minute = 0;
+rule.second = 0;
 schedule.scheduleJob(rule, function(){
     broadcaseMessage("20h rồi!Học hay chơi đây!");
 });
@@ -14,6 +16,8 @@ schedule.scheduleJob(rule, function(){
 var rule = new schedule.RecurrenceRule();
 rule.tz = "Asia/Ho_Chi_Minh";
 rule.hour = 22;
+rule.minute = 0;
+rule.second = 0;
 schedule.scheduleJob(rule, function(){
     broadcaseMessage("22h rồi!Học tiếp hay chơi đây!");
 });
@@ -25,6 +29,7 @@ rule.dayOfWeek = [new schedule.Range(1, 5)];
 rule.tz = "Asia/Ho_Chi_Minh";
 rule.hour = 8;
 rule.minute = 14;
+rule.second = 0;
 schedule.scheduleJob(rule, function(){
     broadcaseMessage("Điểm danh buổi sáng!");
 });
@@ -35,6 +40,7 @@ rule.tz = "Asia/Ho_Chi_Minh";
 rule.dayOfWeek = [new schedule.Range(1, 5)];
 rule.hour = 8;
 rule.minute = 15;
+rule.second = 0;
 schedule.scheduleJob(rule, function(){
     broadcaseMessage("Điểm danh buổi sáng!");
     startSchedule2Loop();
@@ -58,6 +64,7 @@ rule.dayOfWeek = [new schedule.Range(1, 5)];
 rule.tz = "Asia/Ho_Chi_Minh";
 rule.hour = 11;
 rule.minute = 59;
+rule.second = 0;
 schedule.scheduleJob(rule, function(){
     broadcaseMessage("Đi ăn cơm ông chủ ơi");
 });
@@ -68,6 +75,7 @@ rule.dayOfWeek = [new schedule.Range(1, 5)];
 rule.tz = "Asia/Ho_Chi_Minh";
 rule.hour = 12;
 rule.minute = 59;
+rule.second = 0;
 schedule.scheduleJob(rule, function(){
     broadcaseMessage("Điểm danh buổi chiều");
 });
@@ -77,6 +85,8 @@ var rule = new schedule.RecurrenceRule();
 rule.dayOfWeek = [new schedule.Range(1, 5)];
 rule.tz = "Asia/Ho_Chi_Minh";
 rule.hour = 17;
+rule.minute = 0;
+rule.second = 0;
 schedule.scheduleJob(rule, function(){
     broadcaseMessage("Đi tập thể dục ông chủ ơi!");
 });
@@ -86,6 +96,8 @@ var rule = new schedule.RecurrenceRule();
 rule.dayOfWeek = [new schedule.Range(1, 5)];
 
 rule.hour = 18;
+rule.minute = 0;
+rule.second = 0;
 schedule.scheduleJob(rule, function(){
     broadcaseMessage("Giờ tập thể dục kết thúc!");
 });
