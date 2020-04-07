@@ -10,6 +10,14 @@ schedule.scheduleJob(rule, function(){
     broadcaseMessage("20h rồi!Học hay chơi đây!");
 });
 
+//schedule testing
+var rule = new schedule.RecurrenceRule();
+rule.tz = "Asia/Ho_Chi_Minh";
+rule.hour = 22;
+schedule.scheduleJob(rule, function(){
+    broadcaseMessage("22h rồi!Học tiếp hay chơi đây!");
+});
+
 
 //schedule 1
 var rule = new schedule.RecurrenceRule();
