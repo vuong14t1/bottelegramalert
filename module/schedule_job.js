@@ -2,9 +2,21 @@ var schedule = require("node-schedule");
 var listIdGroup = [];
 var index = require("./../index.js");
 
+//schedule testing
+var rule = new schedule.RecurrenceRule();
+rule.dayOfWeek = [new schedule.Range(1, 5)];
+rule.tz = "Asia/Ho_Chi_Minh";
+rule.hour = 19;
+rule.minute = 15;
+schedule.scheduleJob(rule, function(){
+    broadcaseMessage("Testing for set timezone ");
+});
+
+
 //schedule 1
 var rule = new schedule.RecurrenceRule();
 rule.dayOfWeek = [new schedule.Range(1, 5)];
+rule.tz = "Asia/Ho_Chi_Minh";
 rule.hour = 8;
 rule.minute = 14;
 schedule.scheduleJob(rule, function(){
@@ -13,7 +25,8 @@ schedule.scheduleJob(rule, function(){
 
 //schedule 1
 var rule = new schedule.RecurrenceRule();
-// rule.dayOfWeek = [new schedule.Range(1, 5)];
+rule.tz = "Asia/Ho_Chi_Minh";
+rule.dayOfWeek = [new schedule.Range(1, 5)];
 rule.hour = 8;
 rule.minute = 15;
 schedule.scheduleJob(rule, function(){
@@ -35,7 +48,8 @@ function startSchedule2Loop() {v
 
 //schedule 3
 var rule = new schedule.RecurrenceRule();
-// rule.dayOfWeek = [new schedule.Range(1, 5)];
+rule.dayOfWeek = [new schedule.Range(1, 5)];
+rule.tz = "Asia/Ho_Chi_Minh";
 rule.hour = 11;
 rule.minute = 59;
 schedule.scheduleJob(rule, function(){
@@ -44,7 +58,8 @@ schedule.scheduleJob(rule, function(){
 
 //schedule 4
 var rule = new schedule.RecurrenceRule();
-// rule.dayOfWeek = [new schedule.Range(1, 5)];
+rule.dayOfWeek = [new schedule.Range(1, 5)];
+rule.tz = "Asia/Ho_Chi_Minh";
 rule.hour = 12;
 rule.minute = 59;
 schedule.scheduleJob(rule, function(){
@@ -53,7 +68,8 @@ schedule.scheduleJob(rule, function(){
 
 //schedule 5
 var rule = new schedule.RecurrenceRule();
-// rule.dayOfWeek = [new schedule.Range(1, 5)];
+rule.dayOfWeek = [new schedule.Range(1, 5)];
+rule.tz = "Asia/Ho_Chi_Minh";
 rule.hour = 17;
 schedule.scheduleJob(rule, function(){
     broadcaseMessage("Đi tập thể dục ông chủ ơi!");
@@ -61,7 +77,8 @@ schedule.scheduleJob(rule, function(){
 
 //schedule 6
 var rule = new schedule.RecurrenceRule();
-// rule.dayOfWeek = [new schedule.Range(1, 5)];
+rule.dayOfWeek = [new schedule.Range(1, 5)];
+
 rule.hour = 18;
 schedule.scheduleJob(rule, function(){
     broadcaseMessage("Giờ tập thể dục kết thúc!");
