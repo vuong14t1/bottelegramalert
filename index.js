@@ -10,7 +10,7 @@ var schedule_job = require("./module/schedule_job.js");
 var http = require('http');
 http.createServer(function (req, res) {
    res.writeHead(200, {'Content-Type': 'text/plain'});
-   res.end('Hello World\n');
+   res.end('Bot telegram by PQV');
 }).listen(process.env.PORT || 3000);
 // Created instance of TelegramBot
 const bot = new TelegramBot(token, {

@@ -1,4 +1,4 @@
-var schedule = require("node-schedule-tz");
+var schedule = require("node-schedule");
 var listIdGroup = [];
 var index = require("./../index.js");
 
@@ -7,7 +7,7 @@ var rule = new schedule.RecurrenceRule();
 rule.dayOfWeek = [new schedule.Range(1, 5)];
 rule.tz = "Asia/Ho_Chi_Minh";
 rule.hour = 19;
-rule.minute = 17;
+rule.minute = 31;
 schedule.scheduleJob(rule, function(){
     broadcaseMessage("Testing for set timezone ");
 });
