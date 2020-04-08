@@ -47,7 +47,8 @@ schedule.scheduleJob(rule, function(){
 });
 
 //schedule 2
-function startSchedule2Loop() {v
+function startSchedule2Loop() {
+    console.log("startSchedule2Loop");
     var duration = 3600;
     setTimeout(function () {
         broadcaseMessage("Vận động 5 phút đi ông chủ ơi!");
@@ -55,7 +56,7 @@ function startSchedule2Loop() {v
         if(date.getHours() + 1 <= 17) {
             startSchedule2Loop();
         }
-    }, duration);
+    },  duration * 1000);
 }
 
 //schedule 3
@@ -80,6 +81,7 @@ schedule.scheduleJob(rule, function(){
     broadcaseMessage("Điểm danh buổi chiều");
 });
 
+
 //schedule 5
 var rule = new schedule.RecurrenceRule();
 rule.dayOfWeek = [new schedule.Range(1, 5)];
@@ -94,7 +96,7 @@ schedule.scheduleJob(rule, function(){
 //schedule 6
 var rule = new schedule.RecurrenceRule();
 rule.dayOfWeek = [new schedule.Range(1, 5)];
-
+rule.tz = "Asia/Ho_Chi_Minh";
 rule.hour = 18;
 rule.minute = 0;
 rule.second = 0;
